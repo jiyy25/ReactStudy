@@ -6,40 +6,40 @@ function Tab() {
 
 
     return (
-        <section id='tabsection'>
-            <div className='d-flex'>
+
+        <div>
+            <ul className='d-flex'>
                 {
                     db.tab.map((v, i) => {
-                        const colorvar = tabnum === i ? "red" : null;
-                        //i를 활용해야하기 때문에 이 안에다 써야함
-                        //삼항연산식 i 이면 나머지는 null을 반환하겠다.
-
-                        // const colorChange = () => {
-                        //     setTabnum(i)
-                        //     //인덱스를 사용해서 구분가능..!
-                        // }
                         return (
-                            <>
-                                <h3 style={{ color: colorvar }}
-                                    onClick={() => { setTabnum(i) }}>
-                                    {v.tabtext}</h3>
-                                <ul>
-                                    {
-                                        tabnum === i &&
-                                        v.tabul.map((vv, ii) => {
-                                            return <li><a href={vv.href}>{vv.atext}</a></li>
-                                        })
-                                    }
-                                </ul>
-                            </>
+                            <li id={`tablist${i}`}>
+                                <h3 className={`h3${i}`}
+                                    onClick={() => { setTabnum(i) }}
+                                    style={{ color: tabnum === i ? "red" : null }}
+                                >{v.tabtext}</h3>
+                            </li>
                         )
-
                     })
-
                 }
+            </ul>
 
-            </div>
-        </section >
+            {
+                db.tab[tabnum] &&
+                <div>
+                    <ul>
+                        {
+                            db.tab[tabnum].tabul.map((vv, ii) => <li><a href={vv.href}>
+                                {vv.atext}
+                                {
+                                    vv.imgsrc && <img src={vv.imgsrc}></img>
+                                }
+                            </a></li>)}
+                    </ul>
+                </div>
+            }
+
+        </div>
+
     )
 }
 

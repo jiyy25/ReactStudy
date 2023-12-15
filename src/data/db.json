@@ -56,12 +56,12 @@
                 {
                     "atext": "박물관 가족 4인 주차권",
                     "href": "/board?wr_id=1",
-                    "imgsrc": "/board/family.png"
+                    "imgsrc": "/board/family.jpg"
                 },
                 {
                     "atext": "재래시장 할인권",
                     "href": "/board?wr_id=1",
-                    "imgsrc": "/board/mart.png"
+                    "imgsrc": "/board/market.jpg"
                 }
             ]
         }
