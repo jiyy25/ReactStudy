@@ -26,7 +26,7 @@ function Tab() {
             {
                 db.tab[tabnum] &&
                 <div>
-                    <ul>
+                    <ul className='hi'>
                         {
                             db.tab[tabnum].tabul.map((vv, ii) => <li><a href={vv.href}>
                                 {vv.atext}
